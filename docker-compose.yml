@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+    zabbix-server:
+        image: zabbix/zabbix-agent
+        env_file: .env
+        restart: always
+        ports:
+          - "${ZBX_CLIENT_PORT}:10050"
+        privileged: true
